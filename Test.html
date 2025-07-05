@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Image on hover </title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .rotateimg {
+            width: auto;
+            height: 500px;
+            transition: transform 1s ease;
+        }
+
+        .rotateimg:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="introText">WANTED PERSON</h1>
+    <h2>Dm if you see this person lurking around UWA. Prize of $100k</h2>
+    <div class="image-container">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQF4lFo-FuUobA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722407652442?e=1755734400&v=beta&t=By7RmSWj0sfQ-38Ey1e3JajzqsqhhnVR2m4FT4fkMEs" style="width:500px" class="rotateimg">
+    </div>
+    
+    <h1 id="introText">Name: Sam Lim Chen Foong</h1>
+    <br>Crime:Antisocial behaviour
+    
+
+</body>
+<script>
+const writing = [
+    "WANTED PERSON",
+    "DANGEROUS",
+    "BE CAREFUL",
+    "DIAL 911",
+   
+];
+
+let writingindex = 0;
+let index = 0;
+let writtenNow = writing[writingindex];
+let typingForward = true;
+
+function typeWriter() {
+    if (typingForward) {
+        document.getElementById("introText").textContent = writtenNow.substring(0, index);
+        index++;
+        if (index > writtenNow.length) {
+            typingForward = false;
+            setTimeout(typeWriter, 1000); 
+        } else {
+            setTimeout(typeWriter, 100); 
+        }
+    } else {
+        document.getElementById("introText").textContent = writtenNow.substring(0, index);
+        index--;
+        if (index < 0) {
+            typingForward = true;
+            writingindex = (writingindex + 1) % writing.length;
+            writtenNow = writing[writingindex];
+            setTimeout(typeWriter, 1000); 
+        } else {
+            setTimeout(typeWriter, 50);
+        }
+    }
+}
+
+typeWriter(); // Start the typing effect when the page loads
+
+</script>
+</html>
