@@ -147,11 +147,54 @@ body {
 
 .spotify-section {
   padding: 100px 20px;
-  background-color: #191414;
-  color: #1db954;
+  background-color: #657553;
+  color: white;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif
 }
 .spotify-player {
   max-width: 600px;
   margin: 0 auto;
+}
+
+#music-duo {
+  padding: 80px 20px;
+  background-color: #657553;
+  color: white;
+}
+
+.music-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify-embed {
+  max-width: 400px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .music-layout {
+    flex-direction: column;
+  }
+
+  .spotify-embed {
+    max-width: 90%;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  scroll-margin-top: 100px; /* Aligns anchor target below navbar */
+  box-sizing: border-box;
+  color: white;
 }
