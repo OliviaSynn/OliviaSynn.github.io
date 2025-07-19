@@ -35,4 +35,7 @@ function typeWriter() {
 
 typeWriter(); // Start the typing effect when the page loads
 
-
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('show');
+}

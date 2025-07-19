@@ -19,74 +19,10 @@ body {
   background-color: #657553;
 }
 
-label.logo{
-  color:white;
-  font-size: 30px;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
-}
-
 .logo {
   color: white;
   font-size: 16px;
   font-weight: bold;
-}
-
-.checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
-}
-
-@media (max-width: 952px){
-  label.logo{
-    font-size:20px;
-    padding-left: 40px;
-  }
-  nav ul li a{
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 952px){
-  .checkbtn{
-    display: block;
-  }
-  ul{
-    position:fixed;
-    width: 100%;
-    height: 100vh;
-    background: #657553;
-    top: 80px;
-    left: 0;
-    text-align: center;
-  }
-  nav ul li{
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  
-  nav ul li a{
-    font-size: 20px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: #657553;
-  }
-  #check:checked ~ ul{
-    left:0;
-
-  }
 }
 
 .nav-links {
@@ -138,3 +74,69 @@ label.logo{
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    display: block;
+  }
+
+  body {
+    padding-top: 160px; /* taller nav = more padding */
+  }
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+  }
+
+  body {
+    padding-top: 140px;
+  }
+}
