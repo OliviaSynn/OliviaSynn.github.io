@@ -50,19 +50,19 @@ body {
 
 .social-bar {
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 0;
   opacity: 0.4;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 40px;
+  gap: 40px;
+  padding: 30px;
 }
 
 .social-bar a {
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   transition: transform 0.3s, color 0.3s;
   text-align: center;
 }
@@ -98,7 +98,14 @@ body {
   }
 }
 
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
+/* On desktop: no hamburger */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -113,9 +120,15 @@ body {
     align-items: flex-start;
   }
 
+  .nav-header {
+    width: 100%;
+  }
+
   .hamburger {
     display: block;
-    margin-left: auto;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
   }
 
   .nav-links {
@@ -128,15 +141,5 @@ body {
 
   .nav-links.show {
     display: flex;
-  }
-
-  .nav-links li a {
-    font-size: 18px;
-    padding: 10px 0;
-    display: block;
-  }
-
-  body {
-    padding-top: 140px;
   }
 }
