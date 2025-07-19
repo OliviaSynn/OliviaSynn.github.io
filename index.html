@@ -35,3 +35,26 @@
     </div>
     <h1 id="introText" style="color: white; font-family:'Times New Roman', Times, serif; text-align: center; justify-content: center; align-items: center; font-size: 30px; margin-top: 50px;" >Don't Think Too Much...</h1>
     <script src="script.js"></script>
+
+    <section id="music" class="spotify-section">
+  <h2>Listen on Spotify</h2>
+  <div class="spotify-player">
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/14JkAa6IiFaOh5s0nMyMU9?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</section>
+
+<div id="spotify-embed"></div>
+
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+<script>
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    IFrameAPI.createController(
+      document.getElementById('spotify-embed'),
+      { uri: 'spotify:playlist:YOUR_PLAYLIST_ID', width: '100%', height: '380' },
+      (controller) => {
+        // You can programmatically call:
+        // controller.play(), pause(), loadUri(), etc.
+      }
+    );
+  };
+</script>
